@@ -1,5 +1,6 @@
 <x-app-web-layout>
-    <div class="container mt-5">
+    @include('role-permission.nav-links')
+    <div class="container mt-3">
         <div class="row">
             <div class="col-md-12">
                 @if (session('status'))
