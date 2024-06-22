@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('permissions',PermissionController::class);
 
 Route::get('/', function () {
-    return view('frontend.index');
-    // return view('welcome');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
