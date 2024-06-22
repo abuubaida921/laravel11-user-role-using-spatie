@@ -32,10 +32,22 @@ class PermissionController extends Controller
             'permission'=> $permission
         ]);
     }
-    public function update(){
-        return view('role-permission.permission.index');
+    public function update(Request $request, Permission $permission){
+        $request -> validate([
+        'name'=> [
+            'required',
+            'string',
+            'unique:permissions,name,'.$permission->id
+        ]
+    ]);
+    $permission->update([
+        'name'=> $request -> name,
+    ]);
+    return redirect('permissions')->with('status','Permission updated successfully');
     }
-    public function destroy(){
-        
+    public function destroy($permissionId){
+        $permission = Permission::find($permissionId);
+        $permission->delete();
+        return redirect('permissions')->with('status','Permission deleted successfully');
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('permissions',PermissionController::class);
+Route::get('permissions/{permissionId}/delete',[PermissionController::class,'destroy']);
 
 Route::get('/', function () {
     return view('welcome');

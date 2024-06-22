@@ -28,7 +28,8 @@
                                         <td>
                                             <a href="{{ url('permissions/' . $permission->id . '/edit') }}"
                                                 class="btn btn-success">Edit</a>
-                                            <a href="{{ url('') }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ url('permissions/' . $permission->id . '/delete') }}"
+                                                class="btn btn-danger mx-2">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
