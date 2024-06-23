@@ -29,12 +29,15 @@
                                                     {{ in_array($permission->id, $rolePermissions) ? 'checked' : '' }} />
                                                 {{ $permission->name }}
                                             </label>
+                                            @error('permissions')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">Give</button>
                             </div>
                         </form>
                     </div>

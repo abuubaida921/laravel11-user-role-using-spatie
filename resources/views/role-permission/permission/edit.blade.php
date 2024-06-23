@@ -16,9 +16,12 @@
                                 <label for="">Permission Name</label>
                                 <input type="text" name="name" value="{{ $permission->name }}"
                                     class="form-control" />
+                                @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </form>
                     </div>
