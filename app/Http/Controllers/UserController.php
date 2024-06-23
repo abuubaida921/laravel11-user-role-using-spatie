@@ -13,4 +13,7 @@ class UserController extends Controller
             'users'=> $users
         ]);
     }
+    public function create(){
+        return view('role-permission.user.create');
+    }
 }
