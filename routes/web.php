@@ -3,6 +3,7 @@
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('permissions',PermissionController::class);
@@ -12,6 +13,8 @@ Route::resource('roles',RoleController::class);
 Route::get('roles/{roleId}/delete',[RoleController::class,'destroy']);
 Route::get('roles/{roleId}/give-permissions',[RoleController::class,'givePermissionsToRole']);
 Route::put('roles/{roleId}/give-permissions',[RoleController::class,'savePermissionsToRole']);
+
+Route::resource('users',UserController::class);
 
 Route::get('/', function () {
     return view('welcome');
