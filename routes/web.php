@@ -10,6 +10,8 @@ Route::get('permissions/{permissionId}/delete',[PermissionController::class,'des
 
 Route::resource('roles',RoleController::class);
 Route::get('roles/{roleId}/delete',[RoleController::class,'destroy']);
+Route::get('roles/{roleId}/give-permissions',[RoleController::class,'givePermissionsToRole']);
+Route::put('roles/{roleId}/give-permissions',[RoleController::class,'savePermissionsToRole']);
 
 Route::get('/', function () {
     return view('welcome');

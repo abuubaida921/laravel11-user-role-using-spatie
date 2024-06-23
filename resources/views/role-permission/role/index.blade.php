@@ -27,10 +27,12 @@
                                         <td>{{ $role->id }}</td>
                                         <td>{{ $role->name }}</td>
                                         <td>
+                                            <a href="{{ url('roles/' . $role->id . '/give-permissions') }}"
+                                                class="btn btn-warning">Add / Edit Permissions</a>
                                             <a href="{{ url('roles/' . $role->id . '/edit') }}"
-                                                class="btn btn-success">Edit</a>
+                                                class="btn btn-success mx-2">Edit</a>
                                             <a href="{{ url('roles/' . $role->id . '/delete') }}"
-                                                class="btn btn-danger mx-2">Delete</a>
+                                                class="btn btn-danger ">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
