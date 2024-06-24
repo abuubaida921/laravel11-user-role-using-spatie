@@ -76,7 +76,7 @@ class UserController extends Controller
     public function destroy($userId)
     {
         $user = User::findOrFail($userId);
-        $user->delete();
+        $user->delete(); //also delete role and permission from respected table automatically
 
         return redirect('/users')->with('status', 'User Deleted Successfully with roles');
     }
